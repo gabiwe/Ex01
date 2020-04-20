@@ -4,6 +4,8 @@ namespace B20_Ex01_4
 {
     public class Program
     {
+        private const int k_ValidInputLength = 8;
+
         public static void Main()
         {
             runApp();
@@ -55,7 +57,7 @@ namespace B20_Ex01_4
                 isValid = int.TryParse(i_StringInput, out int notCare);
             }
 
-            return isValid && i_StringInput.Length == 8;
+            return isValid && i_StringInput.Length == k_ValidInputLength;
         }
 
         private static void printIfPalindrome(string i_String)
@@ -111,17 +113,17 @@ namespace B20_Ex01_4
 
         private static int countUppercaseLetters(string i_String)
         {
-            int counter = 0;
+            int uppercaseLettersCount = 0;
 
             for (int i = 0; i < i_String.Length; i++)
             {
                 if (char.IsUpper(i_String[i]))
                 {
-                    counter++;
+                    uppercaseLettersCount++;
                 }
             }
 
-            return counter;
+            return uppercaseLettersCount;
         }
 
         private static void exitApp()

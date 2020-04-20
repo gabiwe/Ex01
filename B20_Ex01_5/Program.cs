@@ -4,6 +4,8 @@ namespace B20_Ex01_5
 {
     public class Program
     {
+        private const int k_ValidInputLength = 9;
+
         public static void Main()
         {
             runApp();
@@ -28,7 +30,7 @@ namespace B20_Ex01_5
 
         private static void printHowManyDigitsAreLargerThanUnitsDigit(int i_Number)
         {
-            int counter = 0;
+            int digitsAreLargerThanUnitsDigitCount = 0;
             int unitsDigit = i_Number % 10;
             
             while (i_Number != 0)
@@ -38,17 +40,17 @@ namespace B20_Ex01_5
                 
                 if (digit > unitsDigit)
                 {
-                    counter++;
+                    digitsAreLargerThanUnitsDigitCount++;
                 }
             }
 
             Console.WriteLine(string.Format(
-                "The number of digits which are larger than the units digit '{0}': {1}", unitsDigit, counter));
+                "The number of digits which are larger than the units digit '{0}': {1}", unitsDigit, digitsAreLargerThanUnitsDigitCount));
         }
 
         private static void printHowManyDigitsAreDividedBy3(int i_Number)
         {
-            int counter = 9;
+            int digitsAreDividedBy3Count = k_ValidInputLength;
 
             while (i_Number != 0)
             {
@@ -57,19 +59,19 @@ namespace B20_Ex01_5
 
                 if (remainder != 0)
                 {
-                    counter--;
+                    digitsAreDividedBy3Count--;
                 }
 
                 i_Number /= 10;
             }
 
-            Console.WriteLine(string.Format("The number of digits which are divided by 3: {0}", counter));
+            Console.WriteLine(string.Format("The number of digits which are divided by 3: {0}", digitsAreDividedBy3Count));
         }
 
         private static void printTheSmallestDigit(int i_Number)
         {
             int smallestDigit = 9;
-            bool thereAreLeadingZeros = i_Number < Math.Pow(10, 8);
+            bool thereAreLeadingZeros = i_Number < Math.Pow(10, k_ValidInputLength - 1);
 
             if (thereAreLeadingZeros)
             {
@@ -107,7 +109,7 @@ namespace B20_Ex01_5
         private static bool isInputValid(string i_UserInput, out int o_IntUserInput)
         {
             return int.TryParse(i_UserInput, out o_IntUserInput) &&
-                   i_UserInput.Length == 9;
+                   i_UserInput.Length == k_ValidInputLength;
         }
 
         private static string getUserInput()
