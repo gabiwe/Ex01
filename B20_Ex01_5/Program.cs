@@ -42,22 +42,22 @@ namespace B20_Ex01_5
                 }
             }
 
-            Console.WriteLine(string.Format("The number of digits which are larger than the units digit '{0}': {1}",
-                unitsDigit, counter));
+            Console.WriteLine(string.Format(
+                "The number of digits which are larger than the units digit '{0}': {1}", unitsDigit, counter));
         }
 
         private static void printHowManyDigitsAreDividedBy3(int i_Number)
         {
-            int counter = 0;
+            int counter = 9;
 
             while (i_Number != 0)
             {
                 int digit = i_Number % 10;
                 Math.DivRem(digit, 3, out int remainder);
 
-                if (remainder == 0)
+                if (remainder != 0)
                 {
-                    counter++;
+                    counter--;
                 }
 
                 i_Number /= 10;
@@ -68,45 +68,51 @@ namespace B20_Ex01_5
 
         private static void printTheSmallestDigit(int i_Number)
         {
-            int smallest = 9;
+            int smallestDigit = 9;
+            bool thereAreLeadingZeros = i_Number < Math.Pow(10, 8);
 
-            while (i_Number != 0)
+            if (thereAreLeadingZeros)
             {
-                int digit = i_Number % 10;
-                smallest = Math.Min(digit, smallest);
+                smallestDigit = 0;
+            }
+            else
+            {
+                while (i_Number != 0)
+                {
+                    int digit = i_Number % 10;
+                    smallestDigit = Math.Min(digit, smallestDigit);
 
-                i_Number /= 10;
+                    i_Number /= 10;
+                }
             }
 
-            Console.WriteLine(string.Format("The smallest digit is: {0}", smallest));
+            Console.WriteLine(string.Format("The smallest digit is: {0}", smallestDigit));
         }
 
         private static void printTheLargestDigit(int i_Number)
         {
-            int largest = 0;
+            int largestDigit = 0;
 
             while (i_Number != 0)
             {
                 int digit = i_Number % 10;
-                largest = Math.Max(digit, largest);
+                largestDigit = Math.Max(digit, largestDigit);
 
                 i_Number /= 10;
             }
 
-            Console.WriteLine(string.Format("The largest digit is: {0}", largest));
+            Console.WriteLine(string.Format("The largest digit is: {0}", largestDigit));
         }
 
         private static bool isInputValid(string i_UserInput, out int o_IntUserInput)
         {
-
             return int.TryParse(i_UserInput, out o_IntUserInput) &&
                    i_UserInput.Length == 9;
         }
 
         private static string getUserInput()
         {
-            Console.WriteLine(
-                "Please enter a nine digits natural number: ");
+            Console.WriteLine("Please enter a nine digits natural number: ");
 
             return Console.ReadLine();
         }
