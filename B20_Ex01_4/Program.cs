@@ -4,8 +4,6 @@ namespace B20_Ex01_4
 {
     public class Program
     {
-        private const int k_ValidInputLength = 8;
-
         public static void Main()
         {
             runApp();
@@ -57,7 +55,7 @@ namespace B20_Ex01_4
                 isValid = int.TryParse(i_StringInput, out int notCare);
             }
 
-            return isValid && i_StringInput.Length == k_ValidInputLength;
+            return isValid && i_StringInput.Length == 8;
         }
 
         private static void printIfPalindrome(string i_String)

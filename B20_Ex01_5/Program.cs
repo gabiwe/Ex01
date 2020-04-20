@@ -4,8 +4,6 @@ namespace B20_Ex01_5
 {
     public class Program
     {
-        private const int k_ValidInputLength = 9;
-
         public static void Main()
         {
             runApp();
@@ -50,7 +48,7 @@ namespace B20_Ex01_5
 
         private static void printHowManyDigitsAreDividedBy3(int i_Number)
         {
-            int digitsAreDividedBy3Count = k_ValidInputLength;
+            int digitsAreDividedBy3Count = 9;
 
             while (i_Number != 0)
             {
@@ -71,7 +69,7 @@ namespace B20_Ex01_5
         private static void printTheSmallestDigit(int i_Number)
         {
             int smallestDigit = 9;
-            bool thereAreLeadingZeros = i_Number < Math.Pow(10, k_ValidInputLength - 1);
+            bool thereAreLeadingZeros = i_Number < Math.Pow(10, 8);
 
             if (thereAreLeadingZeros)
             {
@@ -109,7 +107,7 @@ namespace B20_Ex01_5
         private static bool isInputValid(string i_UserInput, out int o_IntUserInput)
         {
             return int.TryParse(i_UserInput, out o_IntUserInput) &&
-                   i_UserInput.Length == k_ValidInputLength;
+                   i_UserInput.Length == 9;
         }
 
         private static string getUserInput()
