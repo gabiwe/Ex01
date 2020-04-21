@@ -45,9 +45,14 @@ namespace B20_Ex01_4
         {
             bool isValid = true;
 
-            for (int i = 0; i < i_StringInput.Length && isValid; i++)
+            for (int i = 0; i < i_StringInput.Length; i++)
             {
                 isValid = char.IsLetter(i_StringInput[i]);
+
+                if (!isValid)
+                {
+                    break;
+                }
             }
 
             if (!isValid)
