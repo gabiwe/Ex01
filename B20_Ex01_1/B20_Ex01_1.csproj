@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C7BD8C43-BF0A-4D49-8AF0-20BDFC286A98}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>B20_Ex01_01</RootNamespace>
-    <AssemblyName>B20_Ex01_01</AssemblyName>
+    <RootNamespace>B20_Ex01_1</RootNamespace>
+    <AssemblyName>B20_Ex01_1</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
