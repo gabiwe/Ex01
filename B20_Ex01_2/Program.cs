@@ -7,7 +7,7 @@ namespace B20_Ex01_02
     {
         private static void Main()
         {
-            const int k_ClockHeight = 7;
+            const int k_ClockHeight = 5;
             DrewSandClock(k_ClockHeight);
         }
 
@@ -34,11 +34,11 @@ namespace B20_Ex01_02
              }
         }
 
-        public static void CreateLineOfAstrix(StringBuilder i_SandClock, int i_ClockHeight, int i_NumOfSpeaces)
+        public static void CreateLineOfAstrix(StringBuilder i_SandClock, int i_NumOfStars, int i_NumOfSpeaces)
         {
-            string lineOfAstrix = new string(' ', i_NumOfSpeaces) + new string('*', i_ClockHeight);
-
-            i_SandClock.AppendLine(lineOfAstrix);
+            i_SandClock.Append(' ', i_NumOfSpeaces);
+            i_SandClock.Append('*', i_NumOfStars);
+            i_SandClock.AppendLine();
         }
     }
 }
