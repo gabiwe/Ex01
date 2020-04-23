@@ -12,7 +12,7 @@ namespace B20_Ex01_01
 
         public static void RunNumbersCheck()
         {
-            const int k_NumOfInputs = 3, k_LengthOfInput = 9;
+            int k_NumOfInputs = 3, k_LengthOfInput = 9;
             int countOfPowerOf2 = 0, countOfOnes = 0, countOfAscendingNumbers = 0, maxNumber = 0, minNumber = int.MaxValue;
             float averageOfOnes = 0, averageOfZeros = 0;
             StringBuilder outputDecimalNumbers = new StringBuilder();

@@ -7,7 +7,7 @@ namespace B20_Ex01_02
     {
         private static void Main()
         {
-            const int k_ClockHeight = 5;
+            int k_ClockHeight = 5;
             DrewSandClock(k_ClockHeight);
         }
 
